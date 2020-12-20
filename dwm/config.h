@@ -19,16 +19,6 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_accent,  col_accent  },
 };
 
-/* Alpha patch... */
-//static const unsigned int baralpha = 40;
-//static const unsigned int borderalpha = 20;
-//static const unsigned int alphas[][3]      = {
-//	/*               fg      bg        border     */
-//	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-//	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
-//};
-
-
 /* tagging */
 static const char *tags[] = { "1", "2", "3"};
 
@@ -126,15 +116,6 @@ static Key keys[] = {
 
 	/* Quit X */
 	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
-	
-	//{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	//{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	//{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	//{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	//{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	//{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-
 };
 
 /* button definitions */
