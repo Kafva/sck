@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -52,6 +53,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_accent, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+static const char *screenCap[] = { "~/lucis/screenshot.bash", NULL };
+static const char *emojiMenu[] = { "~/lucis/emoji.bash", NULL };
+
+static const char *volumeToggle[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *volumeUp[] = { "amixer", "set", "Master", "5%+", NULL };
+static const char *volumeDown[] = { "amixer", "set", "Master", "5%-", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
@@ -91,7 +99,18 @@ static Key keys[] = {
 	/* Move current window left/right and switch to that tag (focusadjacent patch) */
 	{ ControlMask|ShiftMask,        XK_Left,   switchTagToLeft,      {0} },
 	{ ControlMask|ShiftMask,        XK_Right,  switchTagToRight,     {0} },
+
+	/* Volume control */
+	{ 0,                       XF86XK_AudioMute,        spawn, {.v = volumeToggle } },
+	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = volumeDown } },
+	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = volumeUp   } },
 	
+	/* Screen cap */
+	{ MODKEY|ShiftMask,        	 XK_3,               spawn,           {.v = screenCap} },
+	
+	/* Emoji menu */
+	{ MODKEY|ControlMask,        XK_space,           spawn,           {.v = emojiMenu} },
+
 	/* Quit X */
 	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
 	
