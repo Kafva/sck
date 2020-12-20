@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=20" };
+static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=24" };
 static const char dmenufont[]       = "Noto Mono:size=22";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -26,9 +26,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      instance    title       tags        mask     isfloating   monitor */
+	{ "Gimp",     			  NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  			  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "VirtualBox Machine",   NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -38,21 +39,13 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[T]",      tile },    /* first entry is default */
-	{ "[F]",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "離",      tile },     /* first entry is default */
+	{ "",      NULL },     /* no layout function means floating behavior */
+	{ "裡",      monocle },  /* tab between fullscreen windows */
 };
 
 /* key definitions */
 #define MODKEY Mod4Mask
-#define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
-
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -64,16 +57,43 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+
+	/* 'Alt-tab' through windows */
 	{ MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
+
+	/* Increment/decrement the number of windows in the master (right) stack */
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+
+	/* Change width of left/right window stacks */
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+
+	/* Close window */	
+	{ MODKEY,             			XK_w,      killclient,     {0} },
 	{ MODKEY,             			XK_q,      killclient,     {0} },
+
+	/* Set layout */
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	
+	/* Move the current window up/down the stack in tiled mode */
+	{ MODKEY,                       XK_j,   pushdown,           	  {0} },
+	{ MODKEY,                       XK_k,   pushup,           	 	  {0} },
+
+	/* Switch between tags (using custom patch to work with pertag) */
+	{ MODKEY,                       XK_Left,   viewToLeft,            {0} },
+	{ MODKEY,                       XK_Right,  viewToRight,           {0} },
+
+	/* Move current window left/right and switch to that tag (focusadjacent patch) */
+	{ ControlMask|ShiftMask,        XK_Left,   switchTagToLeft,      {0} },
+	{ ControlMask|ShiftMask,        XK_Right,  switchTagToRight,     {0} },
+	
+	/* Quit X */
+	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
+	
 	//{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	//{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	//{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -81,19 +101,7 @@ static Key keys[] = {
 	//{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	//{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	
-	/* "Window snapping" for tiled mode, the zoom() function will bring the current
-	window to the master position and the push/pop functions will move the current window
-	up/down in the stack on the right side of the screen */
-	{ ControlMask,                  XK_left,   zoom,           {0} },
 
-	{ MODKEY,                       XK_Left,   viewtoleft,           {0} },
-	{ MODKEY,                       XK_Right,  viewtoright,          {0} },
-	{ ControlMask|ShiftMask,        XK_Left,   switchTagToLeft,      {0} },
-	{ ControlMask|ShiftMask,        XK_Right,  switchTagToRight,     {0} },
-	
-	{ MODKEY|ShiftMask|ControlMask, XK_w,      quit,           {0} },
-	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
 };
 
 /* button definitions */
