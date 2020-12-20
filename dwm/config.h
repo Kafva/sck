@@ -83,7 +83,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,   pushdown,           	  {0} },
 	{ MODKEY,                       XK_k,   pushup,           	 	  {0} },
 
-	/* Switch between tags (using custom patch to work with pertag) */
+	/* Switch between tags */
+	/* NOTE: uses custom patch to work with 'pertag' and not 'focusadjacent' */
 	{ MODKEY,                       XK_Left,   viewToLeft,            {0} },
 	{ MODKEY,                       XK_Right,  viewToRight,           {0} },
 
