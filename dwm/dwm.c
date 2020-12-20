@@ -209,8 +209,14 @@ static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
+
+/* Self hack to switch tag when moving a window to a new tag */
+static void switchTagToLeft(const Arg *arg);
+static void switchTagToRight(const Arg *arg);
+
 static void tagtoleft(const Arg *arg);
 static void tagtoright(const Arg *arg);
+
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
@@ -2173,6 +2179,18 @@ zoom(const Arg *arg)
 		if (!c || !(c = nexttiled(c->next)))
 			return;
 	pop(c);
+}
+
+/* Self hack to switch tag when moving a window to a new tag */
+static void switchTagToLeft(const Arg *arg)
+{
+	tagtoleft(arg);
+	viewtoleft(arg);
+}
+static void switchTagToRight(const Arg *arg)
+{
+	tagtoright(arg);
+	viewtoright(arg);
 }
 
 int
