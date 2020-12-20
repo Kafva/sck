@@ -96,7 +96,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	
+
+	/* Toggle fullscreen */
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+
 	/* Move the current window up/down the stack in tiled mode */
 	{ MODKEY,                       XK_j,   pushdown,           	  {0} },
 	{ MODKEY,                       XK_k,   pushup,           	 	  {0} },
