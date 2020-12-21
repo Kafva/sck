@@ -6,6 +6,9 @@ static const unsigned int borderpx  = 1;       /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
+static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
+static const char *altbarcmd        = "$HOME/lucis/polybar/launch.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=24" };
 static const char dmenufont[]       = "Noto Mono:size=22";
 static const char col_gray1[]       = "#222222";
@@ -20,7 +23,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3"};
+static const char *tags[] = { "", "", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -40,7 +43,7 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "離",      tile },     /* first entry is default */
+	{ "恵",      tile },     /* first entry is default */
 	{ "",      NULL },     /* no layout function means floating behavior */
 	{ "裡",      monocle },  /* tab between fullscreen windows */
 };
