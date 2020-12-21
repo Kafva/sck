@@ -78,8 +78,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_accent, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static const char *screenCap[] = { "~/lucis/screenshot.bash", NULL };
-static const char *emojiMenu[] = { "~/lucis/emoji.bash", NULL };
+static const char *screenCap[] = { "/home/jonas/lucis/screenshot.bash", NULL };
+static const char *emojiMenu[] = { "/home/jonas/lucis/emoji.bash", NULL };
 
 static const char *volumeToggle[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *volumeUp[] = { "amixer", "set", "Master", "5%+", NULL };
@@ -113,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 
 	/* Toggle fullscreen */
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,         {0}  },
 
 	/* Move the current window up/down the stack in tiled mode */
 	{ MODKEY,                       XK_j,   pushdown,           	  {0} },

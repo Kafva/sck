@@ -2005,8 +2005,12 @@ togglefloating(const Arg *arg)
 void
 togglefullscr(const Arg *arg)
 {
-  if(selmon->sel)
+  if(selmon->sel){
     setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
+
+	/* Manual patch to hide bar when entering fullscreen */
+	togglebar(arg);	
+  }
 }
 
 void
