@@ -22,3 +22,7 @@ main.pdf
 Cargo.lock
 *.orig
 *.rej
+dwm/dwm
+st/st
+dmenu/dmenu
+dmenu/dmenu_*

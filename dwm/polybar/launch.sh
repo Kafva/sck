@@ -7,4 +7,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the main bar with the [-r] flag for automatic
 # updates when the config is changed
-polybar -r main -c ~/lucis/polybar/config.ini &
+polybar -r main -c ~/.config/polybar/config.ini &

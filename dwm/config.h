@@ -29,10 +29,12 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 /* anybar patch */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
-static const char *altbarcmd        = "$HOME/lucis/polybar/launch.sh"; /* Alternate bar launch command */
+static const char *altbarcmd        = "~/.config/polybar/launch.sh"; /* Alternate bar launch command */
 
-static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=24" };
-static const char dmenufont[]       = "Noto Mono:size=22";
+//static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=24" };
+//static const char dmenufont[]       = "Noto Mono:size=22";
+
+static const char *fonts[]          = { "Noto Mono:size=13:style=Bold", "Noto Color Emoji:style=Bold:size=13", "Symbols Nerd Font:size=13" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -75,11 +77,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_accent, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,  NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static const char *screenCap[] = { "/home/jonas/lucis/screenshot.bash", NULL };
-static const char *emojiMenu[] = { "/home/jonas/lucis/emoji.bash", NULL };
+static const char *screenCap[] = { "/home/jonas/linsc/screenshot.bash", NULL };
+static const char *emojiMenu[] = { "/home/jonas/linsc/emoji.bash", NULL };
 
 static const char *volumeToggle[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *volumeUp[] = { "amixer", "set", "Master", "5%+", NULL };
