@@ -10,6 +10,6 @@ Forks of dwm, dmenu and Luke Smith's [st](https://github.com/LukeSmithxyz/st) bu
 
 with some additional fixes, for example, *focusadjacenttag* does not work out of the box with *pertag*. 
 
-The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/linsc` need to be modified upon installation and the polybar configurations under `dwm/polybar` need to be moved into `~/.config/polybar`. Changes based on the particular environment such as monitor, font size etc. can be tweaked in `polybar/config.ini`. 
+The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/linsc` need to be modified upon installation and the polybar configurations under `dwm/polybar` needs to be moved into `~/.config/polybar`. Changes based on the particular environment such as monitor, font size etc. can be tweaked in `polybar/config.ini`. 
 
 ![](misc/screenshot.png)
