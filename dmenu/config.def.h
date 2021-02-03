@@ -4,6 +4,7 @@
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 
 static const char *fonts[] = {
+	"Fira Code:size=16",
 	"Noto Mono:size=16",
 	"Noto Color Emoji"
 };

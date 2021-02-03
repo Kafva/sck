@@ -34,7 +34,7 @@ static const char *altbarcmd        = "~/.config/polybar/launch.sh"; /* Alternat
 //static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=24" };
 //static const char dmenufont[]       = "Noto Mono:size=22";
 
-static const char *fonts[]          = { "Noto Mono:size=13:style=Bold", "Noto Color Emoji:style=Bold:size=13", "Symbols Nerd Font:size=13" };
+static const char *fonts[]          = { "Fira Code:size=13:style=bold", "Noto Color Emoji:style=Bold:size=13", "Symbols Nerd Font:size=13" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -78,7 +78,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,  NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "hyper", NULL };
 
 static const char *screenCap[] = { "/home/jonas/linsc/screenshot.bash", NULL };
 static const char *emojiMenu[] = { "/home/jonas/linsc/emoji.bash", NULL };
@@ -106,7 +106,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 
 	/* Close window */	
-	{ MODKEY,             			XK_w,      killclient,     {0} },
 	{ MODKEY,             			XK_q,      killclient,     {0} },
 
 	/* Set layout */

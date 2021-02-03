@@ -1,5 +1,5 @@
 # sck
-Forks of dwm, dmenu and Luke Smith's [st](https://github.com/LukeSmithxyz/st) build. The dwm build includes a polybar configuration based on [polybar-dwm-module](https://github.com/mihirlad55/polybar-dwm-module) and the following patches
+Dwm fork including a polybar configuration based on [polybar-dwm-module](https://github.com/mihirlad55/polybar-dwm-module) and the following patches
 
 * dwm-actualfullscreen-20191112-cb3f58a.diff
 * dwm-anybar-20200905-bb2e722.diff
