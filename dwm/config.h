@@ -94,6 +94,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 
 	/* 'Alt-tab' through windows */
+	{ ControlMask,                  XK_q,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
 
