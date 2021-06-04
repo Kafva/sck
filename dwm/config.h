@@ -47,7 +47,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3"};
+static const char *tags[] = { "1", "2", "3", "4", "5"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -125,6 +125,17 @@ static Key keys[] = {
 	/* NOTE: uses custom patch to work with 'pertag' and not 'focusadjacent' */
 	{ MODKEY,                       XK_Left,   viewToLeft,            {0} },
 	{ MODKEY,                       XK_Right,  viewToRight,           {0} },
+	
+	/* Ctrl to switch between numbers directly */
+	{ ControlMask,                    XK_1,      	   view,           {.ui = 1 << 0} },  
+	{ ControlMask,                    XK_2,      	   view,           {.ui = 1 << 1} }, 
+	{ ControlMask,                    XK_3,      	   view,           {.ui = 1 << 2} }, 
+	{ ControlMask,                    XK_4,      	   view,           {.ui = 1 << 3} }, 
+	{ ControlMask,                    XK_5,      	   view,           {.ui = 1 << 4} }, 
+	{ ControlMask,                    XK_section,      view,           {.ui = 1 << 5} }, 
+	//{ ControlMask,                  XK_1,      view,            	  {0} },
+	//{ ControlMask,                  XK_2,      view,            	  {1} },
+	//{ ControlMask,                  XK_3,      view,            	  {2} },
 
 	/* Move current window left/right and switch to that tag (focusadjacent patch) */
 	{ ControlMask|ShiftMask,        XK_Left,   switchTagToLeft,      {0} },
