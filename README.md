@@ -21,6 +21,12 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 	- firacode
 	- DWM-polybar
 * Patching method for polybar
+* Tabbed
 * Dmenu setup
-* libxft-bgra https://forums.gentoo.org/viewtopic-t-1110484-start-0.html
 * rounded corners https://github.com/igor37/dwm-rounded-corners/blob/master/dwm-rounded-gaps-fullscreen.diff 
+
+## Emoji support
+A patch to `libxft` is required to have emoji support in st and dmenu, otherwise a crash will occur. On Arch based distributions one can install a patched version of the library, [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) from the AUR. On Gentoo we can resolve this by introducing a [patch](https://wiki.gentoo.org/wiki//etc/portage/patches) into portage for the `libXft` library and (re)installing it
+```bash
+sudo ./scripts/libxft-patch.bash
+```
