@@ -5,10 +5,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code:size=12:style=bold:style=Bold:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+/* Spare fonts */
+static char *font2[] = {
+/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+};
 
-// Alternate fonts to render Unicode characters
-static char *font2[] = { "Noto Color Emoji:size=12" };
 static int borderpx = 2;
 
 /*
@@ -101,32 +104,32 @@ float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* Light colors */
-    "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#21d78b",   // green
-	"#dede26",   // yellow
-	"#59a9eb",   // cyan
-	"#b16286",
-	"#4486e3",   // base
-	"#a89984",
-    
-	/* Bright colors */
-	"#928374",
-	"#fb4934",
-	"#21d77c", // green
-	"#dbde26", // yellow
-	"#59b5eb", // cyan
-	"#d3869b",
-	"#4491e3", // base
-	"#ebdbb2",
-	
-    [255] = 0,
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
+
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
+
+	[255] = 0,
+
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#282828", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+	"#cccccc",
+	"#555555",
+	"black",
 };
 
 
@@ -134,16 +137,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-
-unsigned int defaultfg = 259;
+unsigned int defaultfg = 7;
 unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
-
-//unsigned int defaultfg = 7;
-//unsigned int defaultbg = 0;
-//static unsigned int defaultcs = 256;
-//static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
@@ -483,4 +480,3 @@ static char ascii_printable[] =
 	" !\"#$%&'()*+,-./0123456789:;<=>?"
 	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 	"`abcdefghijklmnopqrstuvwxyz{|}~";
-

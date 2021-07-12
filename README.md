@@ -13,3 +13,14 @@ with some additional fixes, for example, *focusadjacenttag* does not work out of
 The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/linsc` need to be modified upon installation and the polybar configurations under `dwm/polybar` needs to be moved into `~/.config/polybar`. Changes based on the particular environment such as monitor, font size etc. can be tweaked in `polybar/config.ini`. 
 
 ![](.github/screenshot.png)
+
+## Installation
+
+* Dependencies
+	- Noto color emoji
+	- firacode
+	- DWM-polybar
+* Patching method for polybar
+* Dmenu setup
+* libxft-bgra https://forums.gentoo.org/viewtopic-t-1110484-start-0.html
+* rounded corners https://github.com/igor37/dwm-rounded-corners/blob/master/dwm-rounded-gaps-fullscreen.diff 
