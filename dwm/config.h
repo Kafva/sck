@@ -31,9 +31,6 @@ static const int usealtbar          = 1;        /* 1 means use non-dwm status ba
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *altbarcmd        = "~/.config/polybar/launch.sh"; /* Alternate bar launch command */
 
-//static const char *fonts[]          = { "Noto Mono:size=22:style=Bold", "Noto Color Emoji:style=Bold:size=20", "Symbols Nerd Font:size=24" };
-//static const char dmenufont[]       = "Noto Mono:size=22";
-
 static const char *fonts[]          = { "Fira Code:size=13:style=bold", "Noto Color Emoji:style=Bold:size=13", "Symbols Nerd Font:size=13" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -111,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY,             			XK_q,      killclient,     {0} },
 
 	/* Set layout */
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 

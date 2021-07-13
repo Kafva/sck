@@ -1,4 +1,5 @@
 old_st
+stest
 *vscode
 *.swp
 *.pid
@@ -24,6 +25,7 @@ Cargo.lock
 *.orig
 *.rej
 dwm/dwm
+dwm-msg
 st/st
 dmenu/dmenu
 dmenu/dmenu_*

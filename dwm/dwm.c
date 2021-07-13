@@ -1930,6 +1930,7 @@ void
 spawnbar()
 {
 	if (*altbarcmd)
+		#pragma GCC diagnostic ignored "-Wunused-result"
 		system(altbarcmd);
 }
 
