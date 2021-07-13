@@ -8,8 +8,13 @@
 static char *font = "Fira Code:size=12:style=bold:style=Bold:antialias=true:autohint=true";
 
 // Alternate fonts to render Unicode characters
-static char *font2[] = { "Noto Color Emoji:size=12" };
+static char *font2[] = { 
+	"Fira Code:size=12:style=bold:style=Bold:antialias=true:autohint=true",
+	"Noto Color Emoji:size=12" 
+};
 static int borderpx = 2;
+
+static char *select_url[] = { "/bin/sh", "-c", "~/Repos/scripts/select_url.sh", NULL };
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -213,6 +218,7 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_k,           kscrollup,      {.i =  1} },
 	{ ControlMask,          XK_j,           kscrolldown,    {.i =  1} },
 	{ MODKEY,              	XK_t,      		newterm,        {.i =  0} },
+	{ MODKEY,               XK_o,           externalpipe,   {.v =  select_url} },
 };
 
 /*
