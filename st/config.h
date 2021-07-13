@@ -9,9 +9,11 @@ static char *font = "Fira Code:size=12:style=bold:style=Bold:antialias=true:auto
 
 // Alternate fonts to render Unicode characters
 static char *font2[] = { 
-	"Fira Code:size=12:style=bold:style=Bold:antialias=true:autohint=true",
-	"Noto Color Emoji:size=12" 
+	"Fira Code:size=12:style=bold", 
+	"Noto Color Emoji:style=Bold:size=12", 
+	"Symbols Nerd Font:size=12"
 };
+
 static int borderpx = 2;
 
 static char *select_url[] = { "/bin/sh", "-c", "~/Repos/scripts/select_url.sh", NULL };
