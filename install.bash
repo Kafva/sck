@@ -13,7 +13,7 @@ done
 
 shift $(($OPTIND - 1))
 
-echo "$1" | grep -qE "^dwm|dmenu|st|all$" || exitErr "$usage"
+echo "$1" | grep -qE "^dwm|dmenu|st|tabbed|all$" || exitErr "$usage"
 echo "$1" | grep -qE "^dwm|all$" &&
 	pgrep dwm > /dev/null && exitErr "Quit dwm before installation"
 
@@ -28,9 +28,7 @@ case $1 in
 		makeCmd dmenu
 		makeCmd st
 		makeCmd tabbed
-
-		[ -d ~/.config/polybar ] && echo "Remove ~/.config/polybar to use the supplied configuration" ||
-			ln -sf $(dirname $(realpath $0))/polybar ~/.config/polybar
+		ln -sf $(dirname $(realpath $0))/polybar ~/.config/polybar
 		;;
 	*) makeCmd $1
 		;;

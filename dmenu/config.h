@@ -1,12 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
 
+#include "../global.h"
+
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 
-static const char *fonts[] = {
-	"Fira Code:size=14:style=bold",
-	"Noto Color Emoji"
-};
+static const char *fonts[] = { FONT_1, FONT_2 };
 
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {

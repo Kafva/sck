@@ -35,11 +35,7 @@ static const int usealtbar          = 1;        /* 1 means use non-dwm status ba
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *altbarcmd        = "~/.config/polybar/launch.sh"; /* Alternate bar launch command */
 
-static const char *fonts[] = { 
-	"Fira Code:size=12:style=bold", 
-	"Noto Color Emoji:style=Bold:size=12", 
-	"Symbols Nerd Font:size=12", 
-};
+static const char *fonts[] = { FONT_1, FONT_2, FONT_3 };
 
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";

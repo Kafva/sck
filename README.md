@@ -33,5 +33,5 @@ Note that one may need to delete the cache at `~/.cache/dmenu_run` and potential
 ## Emoji support
 A patch to `libxft` is required to prevent st and dmenu from crashing when emojis are displayed. On Arch based distributions one can install a patched version of the library, [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) from the AUR. On Gentoo we can resolve this by introducing a [patch](https://wiki.gentoo.org/wiki//etc/portage/patches) into portage for the `libXft` library and (re)installing it
 ```bash
-sudo ./scripts/libxft-patch.bash
+sudo ./helper/libxft-patch.bash
 ```

@@ -8,14 +8,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code:size=12:style=bold:style=Bold:antialias=true:autohint=true";
+static char *font = FONT_1;
 
 // Alternate fonts to render Unicode characters
-static char *font2[] = { 
-	"Fira Code:size=12:style=bold", 
-	"Noto Color Emoji:style=Bold:size=12", 
-	"Symbols Nerd Font:size=12"
-};
+static char *font2[] = { FONT_1, FONT_2, FONT_3};
 
 static int borderpx = 2;
 
