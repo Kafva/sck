@@ -1,6 +1,6 @@
 #!/bin/bash
 exitErr(){ echo -e "$1" >&2 ; exit 1; }
-usage="usage: $(basename $0) [-h] <dmenu|st|dwm|all>"
+usage="usage: $(basename $0) [-h] <dmenu|st|dwm|tabbed|all>"
 helpStr="Build and install the specified program(s)"
 
 while getopts ":h" opt
@@ -27,6 +27,10 @@ case $1 in
 		makeCmd dwm
 		makeCmd dmenu
 		makeCmd st
+		makeCmd tabbed
+
+		[ -d ~/.config/polybar ] && echo "Remove ~/.config/polybar to use the supplied configuration" ||
+			ln -sf $(dirname $(realpath $0))/polybar ~/.config/polybar
 		;;
 	*) makeCmd $1
 		;;

@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "../global.h"
+#define SELECT_URL SCRIPTS_PATH "select_url.sh"
+
 /*
  * appearance
  *
@@ -16,7 +19,7 @@ static char *font2[] = {
 
 static int borderpx = 2;
 
-static char *select_url[] = { "/bin/sh", "-c", "~/Repos/scripts/select_url.sh", NULL };
+static char *select_url[] = { SELECT_URL, NULL };
 
 /*
  * What program is execed by st depends of these precedence rules:

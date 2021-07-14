@@ -1,5 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
+#include "../global.h"
+
+#define SCREENSHOT SCRIPTS_PATH "screenshot.sh"
+#define EMOJI_MENU SCRIPTS_PATH "emoji.sh"
 
 /* IPC patch */
 static const char *ipcsockpath = "/tmp/dwm.sock";
@@ -31,7 +35,6 @@ static const int usealtbar          = 1;        /* 1 means use non-dwm status ba
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *altbarcmd        = "~/.config/polybar/launch.sh"; /* Alternate bar launch command */
 
-//static const char *fonts[]          = { "Fira Code:size=13:style=bold", "Noto Color Emoji:style=Bold:size=13", "Symbols Nerd Font:size=13" };
 static const char *fonts[] = { 
 	"Fira Code:size=12:style=bold", 
 	"Noto Color Emoji:style=Bold:size=12", 
@@ -83,9 +86,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,  NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static const char *screenCap[] = { "~/Repos/sck/scripts/test.sh", NULL };
-//static const char *screenCap[] = { "~/Repos/sck/scripts/screenshot.sh", NULL };
-static const char *emojiMenu[] = { "~/Repos/sck/scripts/emoji.sh", NULL };
+static const char *screenShot[] = { SCREENSHOT, NULL };
+static const char *emojiMenu[] = { EMOJI_MENU, NULL };
 
 static const char *volumeToggle[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *volumeUp[] = { "amixer", "set", "Master", "5%+", NULL };
@@ -147,8 +149,8 @@ static Key keys[] = {
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = volumeDown } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = volumeUp   } },
 	
-	/* Screen cap */
-	{ MODKEY|ShiftMask,        	 XK_3,               spawn,           {.v = screenCap} },
+	/* Screen shot */
+	{ MODKEY|ShiftMask,        	 XK_3,               spawn,           {.v = screenShot} },
 	
 	/* Emoji menu */
 	{ MODKEY|ControlMask,        XK_space,           spawn,           {.v = emojiMenu} },
