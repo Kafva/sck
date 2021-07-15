@@ -14,13 +14,32 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 ![](.github/screenshot.png)
 
-## DWM
+## dwm
 
 ### Controls
-* Take a screenshot (saves to `~/Pictures/Screens` by defaullt): <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
+* Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
+* Cycle between windows: <kbd>Meta</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
+* Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
+* Tiled layout: <kbd>Meta</kbd> <kbd>g</kbd>
+    	* Resize windows horizontally: <kbd>Meta</kbd> <kbd>h</kbd> / <kbd>Meta</kbd> <kbd>l</kbd>
+	* Move current window in the stack: <kbd>Meta</kbd> <kbd>j</kbd> / <kbd>Meta</kbd> <kbd>k</kbd>
+* Floating layout: <kbd>Meta</kbd> <kbd>f</kbd>
+	* Resize windows: <kbd>Meta</kbd> <kbd>Right mouse button</kbd>
+	* Move windows: <kbd>Meta</kbd> <kbd>Left mouse button</kbd>
+* Monocle layout: <kbd>Meta</kbd> <kbd>m</kbd>
+* Screenshot (saves to `~/Pictures/Screens` by default): <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
 * Open emoji picker: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> 
-* Resize windows: <kbd>Meta</kbd> <kbd>Right mouse button</kbd>
-* Move windows: <kbd>Meta</kbd> <kbd>Left mouse button</kbd>
+
+## st
+
+### Controls
+* Scroll: <kbd>Ctrl</kbd> <kbd>j</kbd> / <kbd>Ctrl</kbd> <kbd>k</kbd>
+* Zoom: <kbd>Ctrl</kbd> <kbd>+</kbd> / <kbd>Ctrl</kbd> <kbd>-</kbd>
+* Reset zoom: <kbd>Ctrl</kbd> <kbd>0</kbd> 
+* Copy selection: <kbd>Meta</kbd> <kbd>c</kbd>
+* Paste selection: <kbd>Meta</kbd> <kbd>v</kbd>
+* Open selection for URLs in the current buffer: <kbd>Meta</kbd> <kbd>o</kbd>
+
 
 ## Installation
 

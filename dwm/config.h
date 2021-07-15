@@ -25,11 +25,19 @@ static IPCCommand ipccommands[] = {
 };
 
 /* appearance */
-static const unsigned int borderpx  = 1;       	/* border pixel of windows */
-static const unsigned int gappx     = 5;     	/* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+
+/* Rounded borders anf gaps */
+static const unsigned int borderpx  = 0;       	/* border pixel of windows */
+static const unsigned int cornerrad = 20;
+static const unsigned int gappih    = 10;
+static const unsigned int gappiv    = 10;
+static const unsigned int gappoh    = 10;
+static const unsigned int gappov    = 10;
+static const int smartgaps          = 0; /* Will produce gaps whenn only one window exists if set */
+
 
 /* anybar patch */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
