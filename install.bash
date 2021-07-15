@@ -28,7 +28,9 @@ case $1 in
 		makeCmd dmenu
 		makeCmd st
 		makeCmd tabbed
-		ln -sf $(dirname $(realpath $0))/polybar ~/.config/polybar
+
+		rm -rf ~/.config/polybar
+		ln -s $(dirname $(realpath $0))/polybar ~/.config/polybar
 		;;
 	*) makeCmd $1
 		;;

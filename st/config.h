@@ -218,7 +218,6 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
 	{ ControlMask,          XK_k,           kscrollup,      {.i =  1} },
 	{ ControlMask,          XK_j,           kscrolldown,    {.i =  1} },
-	{ MODKEY,              	XK_t,      		newterm,        {.i =  0} },
 	{ MODKEY,               XK_o,           externalpipe,   {.v =  select_url} },
 };
 

@@ -5,7 +5,7 @@
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 
-static const char *fonts[] = { FONT_1, FONT_2 };
+static const char *fonts[] = { FONT_1, FONT_2, FONT_3 };
 
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
