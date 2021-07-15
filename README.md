@@ -20,6 +20,7 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 * Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
 * Cycle between windows: <kbd>Meta</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
 * Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
+* Fullscreen current window: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
 * Tiled layout: <kbd>Meta</kbd> <kbd>g</kbd>
     	* Resize windows horizontally: <kbd>Meta</kbd> <kbd>h</kbd> / <kbd>Meta</kbd> <kbd>l</kbd>
 	* Move current window in the stack: <kbd>Meta</kbd> <kbd>j</kbd> / <kbd>Meta</kbd> <kbd>k</kbd>
@@ -42,15 +43,16 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 
 ## Installation
+The following fonts need to be installed
+* Noto
+* Nerd fonts
+* Firacode
 
+* Use picom-aur for rounded cornerns
 * Dependencies
-	- Noto color emoji
-	- firacode
 	- DWM-polybar
 	- `maim`
 * Patching method for polybar
-* Tabbed could be nice
-* rounded corners https://github.com/igor37/dwm-rounded-corners/blob/master/dwm-rounded-gaps-fullscreen.diff 
 
 ## Dmenu
 Note that one may need to delete the cache at `~/.cache/dmenu_run` and potentiallly logout before dmenu is able to find all binariies in the `$PATH`.
