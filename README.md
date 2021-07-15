@@ -14,6 +14,14 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 ![](.github/screenshot.png)
 
+## DWM
+
+### Controls
+* Take a screenshot (saves to `~/Pictures/Screens` by defaullt): <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
+* Open emoji picker: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> 
+* Resize windows: <kbd>Meta</kbd> <kbd>Right mouse button</kbd>
+* Move windows: <kbd>Meta</kbd> <kbd>Left mouse button</kbd>
+
 ## Installation
 
 * Dependencies
@@ -23,8 +31,6 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 	- `maim`
 * Patching method for polybar
 * Tabbed could be nice
-* Dmenu setup
-* libxft-bgra https://forums.gentoo.org/viewtopic-t-1110484-start-0.html
 * rounded corners https://github.com/igor37/dwm-rounded-corners/blob/master/dwm-rounded-gaps-fullscreen.diff 
 
 ## Dmenu
