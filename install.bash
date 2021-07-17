@@ -13,7 +13,7 @@ done
 
 shift $(($OPTIND - 1))
 
-echo "$1" | grep -qE "^dwm|dmenu|st|tabbed|all$" || exitErr "$usage"
+echo "$1" | grep -qE "^dwm|dmenu|st|tabbed|confs|all$" || exitErr "$usage"
 echo "$1" | grep -qE "^dwm|all$" &&
 	pgrep dwm > /dev/null && exitErr "Quit dwm before installation"
 
@@ -26,6 +26,9 @@ linkConfs(){
 	project=$(dirname $(realpath $0))
 
 	# Symlink dotfiles
+	mkdir -p ~/.config/polybar
+	mkdir -p ~/.config/gtk-3.0
+	ln -sf $project/conf/gtk-3.0.ini ~/.config/gtk-3.0/settings.ini
 	ln -sf $project/conf/polybar.ini ~/.config/polybar/config.ini
 	ln -sf $project/conf/picom.conf ~/.config/picom.conf # Transparancy and rounded corners
 	ln -sf $project/conf/xinitrc ~/.xinitrc 	# Commands to run upon calling `startx`

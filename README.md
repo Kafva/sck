@@ -17,6 +17,7 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 ## dwm
 
 ### Controls
+* Quit X: <kbd>Meta</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>q</kbd> 
 * Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
 * Cycle between windows: <kbd>Meta</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
 * Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
@@ -43,22 +44,58 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 
 ## Installation
-The following fonts need to be installed
-* Noto
-* Nerd fonts
-* Firacode
+```bash
+pacman -S xorg-server xorg-xinit xorg-xset xclip xorg-wininfo xorg-xprop alsa-utils \
+	feh imwheel maim \
+	libxinerama yajl \
+	noto-fonts noto-fonts-emoji 
 
-* Use picom-aur for rounded cornerns
-* Dependencies
-	- DWM-polybar
-	- `maim`
-* Patching method for polybar
+yay -S libxft-bgra \
+	picom-rounded-corners \
+	ttf-fira-code  nerd-fonts-symbols
+```
+
+### GTK
+KVANTUM
+Install a theme to `/usr/share/themes/`
+```bash
+pacman -S ttf-roboto adapta-gtk-theme
+```
+
+### polybar-dwm-module
+A patched version of polybar is required to display the current DWM layout, this version of polybar can be installed from the [AUR](https://aur.archlinux.org/packages/polybar-dwm-module) 
+
+```bash
+yay -S polybar-dwm-module
+```
+
+or manually using the commands below (TODO test on gentoo)
+
+```bash
+# Fetch the latest version of the module
+git clone git@github.com:mihirlad55/polybar-dwm-module.git
+git -C polybar-dwm-module submodule update --init --recursive
+
+# Build it and install it to /usr/local/bin
+cd polybar-dwm-module
+./build.sh -d -a -p -n -c -i -A
+```
+
+-----------------
+
+## Polybar
+* The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`.
+* The `master-mixer` must be changed to the value retrieved from 
+```bash
+amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"`.
+```
 
 ## Dmenu
-Note that one may need to delete the cache at `~/.cache/dmenu_run` and potentiallly logout before dmenu is able to find all binariies in the `$PATH`.
+Note that one may need to delete the cache at `~/.cache/dmenu_run` and potentially logout before dmenu is able to find all binaries in the `$PATH`.
 
 ## Emoji support
 A patch to `libxft` is required to prevent st and dmenu from crashing when emojis are displayed. On Arch based distributions one can install a patched version of the library, [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) from the AUR. On Gentoo we can resolve this by introducing a [patch](https://wiki.gentoo.org/wiki//etc/portage/patches) into portage for the `libXft` library and (re)installing it
 ```bash
+# Gentoo
 sudo ./helper/libxft-patch.bash
 ```
