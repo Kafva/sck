@@ -23,7 +23,7 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 * Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
 * Fullscreen current window: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
 * Tiled layout: <kbd>Meta</kbd> <kbd>g</kbd>
-    	* Resize windows horizontally: <kbd>Meta</kbd> <kbd>h</kbd> / <kbd>Meta</kbd> <kbd>l</kbd>
+	* Resize windows horizontally: <kbd>Meta</kbd> <kbd>h</kbd> / <kbd>Meta</kbd> <kbd>l</kbd>
 	* Move current window in the stack: <kbd>Meta</kbd> <kbd>j</kbd> / <kbd>Meta</kbd> <kbd>k</kbd>
 * Floating layout: <kbd>Meta</kbd> <kbd>f</kbd>
 	* Resize windows: <kbd>Meta</kbd> <kbd>Right mouse button</kbd>
