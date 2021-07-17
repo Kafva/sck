@@ -1,7 +1,7 @@
 #!/bin/bash
 exitErr(){ echo -e "$1" >&2 ; exit 1; }
-usage="usage: $(basename $0) [-h] <dmenu|st|dwm|tabbed|all>"
-helpStr="Build and install the specified program(s)"
+usage="usage: $(basename $0) [-h] <dmenu|st|dwm|tabbed|confs|all>"
+helpStr="Build and install the specified program(s). The 'confs' option will produce symlinks for config files under ./conf."
 
 while getopts ":h" opt
 do
@@ -22,6 +22,17 @@ makeCmd(){
 	sudo make -C $1 install
 }
 
+linkConfs(){
+	project=$(dirname $(realpath $0))
+
+	# Symlink dotfiles
+	ln -sf $project/conf/polybar.ini ~/.config/polybar/config.ini
+	ln -sf $project/conf/picom.conf ~/.config/picom.conf # Transparancy and rounded corners
+	ln -sf $project/conf/xinitrc ~/.xinitrc 	# Commands to run upon calling `startx`
+	ln -sf $project/conf/Xresources ~/.Xresources 	# Defaullt settings for X
+	ln -sf $project/conf/imwheelrc ~/.imwheelrc 	# Custom scroll speed for applications
+}
+
 case $1 in 
 	all) 
 		makeCmd dwm
@@ -29,8 +40,10 @@ case $1 in
 		makeCmd st
 		makeCmd tabbed
 
-		rm -rf ~/.config/polybar
-		ln -s $(dirname $(realpath $0))/polybar ~/.config/polybar
+		linkConfs
+		;;
+	confs)
+		linkConfs
 		;;
 	*) makeCmd $1
 		;;

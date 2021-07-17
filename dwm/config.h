@@ -3,6 +3,7 @@
 #include "../global.h"
 
 #define SCREENSHOT SCRIPTS_PATH "screenshot.sh"
+#define POLYBAR SCRIPTS_PATH "launch_polybar.sh"
 #define EMOJI_MENU SCRIPTS_PATH "emoji.sh"
 
 /* IPC patch */
@@ -31,18 +32,18 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* Rounded borders anf gaps */
 static const unsigned int borderpx  = 0;       	/* border pixel of windows */
-static const unsigned int cornerrad = 20;
-static const unsigned int gappih    = 10;
-static const unsigned int gappiv    = 10;
-static const unsigned int gappoh    = 10;
-static const unsigned int gappov    = 10;
+static const unsigned int cornerrad = 0;		/* Use picom-rounded-corners instead */
+static const unsigned int gappih    = 4;
+static const unsigned int gappiv    = 4;
+static const unsigned int gappoh    = 4;
+static const unsigned int gappov    = 4;
 static const int smartgaps          = 0; /* Will produce gaps whenn only one window exists if set */
 
 
 /* anybar patch */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
-static const char *altbarcmd        = "~/.config/polybar/launch.sh"; /* Alternate bar launch command */
+static const char *altbarcmd        = POLYBAR; /* Alternate bar launch command */
 
 static const char *fonts[] = { FONT_1, FONT_2, FONT_3 };
 

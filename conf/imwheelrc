@@ -1,0 +1,5 @@
+# Increase scroll speed for windows based on their
+# `xprop WM_CLASS`
+"^st|xterm$"
+    None, Up, Button4, 5
+    None, Down, Button5, 5

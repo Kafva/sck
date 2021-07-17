@@ -1,0 +1,7 @@
+xset r rate 300 50 &
+picom --config ~/.config/picom.conf &
+xrdb .Xresources &
+sh ~/.fehbg &
+setxkbmap -layout se -model macintosh -option lv3:alt_switch -option caps:escape &
+imwheel &
+exec dwm
