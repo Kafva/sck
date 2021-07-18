@@ -92,7 +92,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,  NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *tabbedTermCmd[]  = { "tabbed -r 2 st -w ''", NULL };
+static const char *tabbedTermCmd[]  = { "tabbed -c -r 2 st -w ''", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *mixercmd[]  = { "st", "-e", "pulsemixer", NULL };
 
