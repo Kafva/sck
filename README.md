@@ -16,7 +16,7 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 ## dwm
 
-### Controls
+### Keybindings
 * Quit X: <kbd>Meta</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>q</kbd> 
 * Cycle between windows: <kbd>Meta</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
 * Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
@@ -30,6 +30,8 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 * Fullscreen current window: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
 * Screenshot (saves to `~/Pictures/Screens` by default): <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
 * Open emoji picker: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> 
+* Open terminal: <kbd>Meta</kbd> <kbd>Enter</kbd> 
+* Open terminal in `tabbed`: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>Enter</kbd> 
 * Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
 * Open browser: <kbd>Meta</kbd> <kbd>b</kbd> 
 * Open `pulsemixer`: <kbd>Meta</kbd> <kbd>p</kbd> 
@@ -38,7 +40,7 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 ## st
 
-### Controls
+### Keybindings
 * Scroll: <kbd>Ctrl</kbd> <kbd>j</kbd> / <kbd>Ctrl</kbd> <kbd>k</kbd>
 * Zoom: <kbd>Ctrl</kbd> <kbd>+</kbd> / <kbd>Ctrl</kbd> <kbd>-</kbd>
 * Reset zoom: <kbd>Ctrl</kbd> <kbd>0</kbd> 
@@ -46,6 +48,14 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 * Paste selection: <kbd>Meta</kbd> <kbd>v</kbd>
 * Open selection for URLs in the current buffer: <kbd>Meta</kbd> <kbd>o</kbd>
 
+## tabbed
+
+### Keybindings
+* Open new tab: <kbd>Meta</kbd> <kbd>t</kbd>
+* Close tab: <kbd>Meta</kbd> <kbd>w</kbd> 
+* Cycle through tabs: <kbd>Ctrl</kbd> <kbd>Tab</kbd> / <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Tab</kbd> 
+* Move current tab: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>h</kbd> / <kbd>l</kbd>
+* Go to tab by index: <kbd>Meta</kbd> <kbd>1</kbd> - <kbd>9</kbd> 
 
 ## Installation
 ```bash
