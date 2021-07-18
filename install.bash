@@ -36,6 +36,7 @@ linkConfs(){
 	ln -sf $project/conf/xinitrc ~/.xinitrc 	# Commands to run upon calling `startx`
 	ln -sf $project/conf/Xresources ~/.Xresources 	# Defaullt settings for X
 	ln -sf $project/conf/imwheelrc ~/.imwheelrc 	# Custom scroll speed for applications
+	ln -sf $project/conf/gpg-agent.conf ~/.gnupg/gpg-agent.conf # Force console prompt for GPG 
 }
 
 case $1 in 
