@@ -10,9 +10,7 @@
 	* [st](#st)
 	* [tabbed](#tabbed)
 
-Forks of suckless software and configurations for X environment. All applied patches are listed under the `patches` directory for each program 
-
-![](.github/screenshot.jpg)
+![](.github/screenshot.png)
 
 ## Installation
 Install the following dependencies
