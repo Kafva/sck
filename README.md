@@ -17,14 +17,18 @@ Forks of suckless software and configurations for X environment. All applied pat
 ## Installation
 Install the following dependencies
 ```bash
-pacman -S xorg-server xorg-xinit xorg-xset xclip xorg-wininfo xorg-xprop alsa-utils \
+pacman -S xorg-server xorg-xinit xorg-xset xclip \
 	feh imwheel maim \
 	libxinerama yajl \
 	noto-fonts noto-fonts-emoji 
 
-yay -S libxft-bgra \
-	picom-rounded-corners \
-	ttf-fira-code  nerd-fonts-symbols
+yay -S picom-rounded-corners \
+	ttf-fira-code nerd-fonts-symbols
+```
+To support all polybar modules, the following packages are also required
+```bash
+pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth \
+	bluez-utils networkmanager
 ```
 
 ### GTK/Qt
@@ -46,7 +50,11 @@ yay -S polybar-dwm-module
 Note that one may need to delete the cache at `~/.cache/dmenu_run` and potentially logout before dmenu is able to find all binaries in the `$PATH`.
 
 ### Emoji support
-A patch to `libxft` is required to prevent st and dmenu from crashing when emojis are displayed. On Arch based distributions one can install a patched version of the library, [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) from the AUR. On Gentoo we can resolve this by introducing a [patch](https://wiki.gentoo.org/wiki//etc/portage/patches) into portage for the `libXft` library and (re)installing it
+A patch to `libxft` is required to prevent st and dmenu from crashing when emojis are displayed. On Arch based distributions one can install a patched version of the library, [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) from the AUR. 
+```bash
+yay -S libxft-bgra
+```
+On Gentoo one can resolve this by introducing a [patch](https://wiki.gentoo.org/wiki//etc/portage/patches) into portage for the `libXft` library and (re)installing it
 ```bash
 sudo ./helper/libxft-patch.bash
 ```
