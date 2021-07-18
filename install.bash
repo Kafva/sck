@@ -39,8 +39,8 @@ linkConfs(){
 	ln -sf $project/conf/gpg-agent.conf ~/.gnupg/gpg-agent.conf # Force console prompt for GPG 
 }
 
-case $1 in 
-	all) 
+case $1 in
+	all)
 		makeCmd dwm
 		makeCmd dmenu
 		makeCmd st
@@ -51,7 +51,8 @@ case $1 in
 	confs)
 		linkConfs
 		;;
-	*) makeCmd $1
+	*)
+		makeCmd $1
 		;;
 esac
 
