@@ -37,6 +37,7 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 * Open `pulsemixer`: <kbd>Meta</kbd> <kbd>p</kbd> 
 * Save current clipboard contents to `/tmp/local-clip`: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>s</kbd> 
 * Load contents of `/tmp/rem-clip` into clipboard: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>l</kbd> 
+* The audio keys (mute/unmute etc.) interact with pulseaudio by default, if the project is compiled with `USE_ALSA` defined, commands from `alsa-utils` are used instead
 
 ## st
 

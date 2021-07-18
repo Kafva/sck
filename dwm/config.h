@@ -103,15 +103,15 @@ static const char *saveClipboard[] = { CLIPBOARD, "save", NULL };
 static const char *loadClipboard[] = { CLIPBOARD, "load", NULL };
 
 
-/* Pulseaudio */
-static const char *volumeToggle[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *volumeUp[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+3%", NULL };
-static const char *volumeDown[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-3%", NULL };
-
-/* ALSA */
-//static const char *volumeToggle[] = { "amixer", "set", "Master", "toggle", NULL };
-//static const char *volumeUp[] = { "amixer", "set", "Master", "5%+", NULL };
-//static const char *volumeDown[] = { "amixer", "set", "Master", "5%-", NULL };
+#ifdef USE_ALSA
+	static const char *volumeToggle[] = { "amixer", "set", "Master", "toggle", NULL };
+	static const char *volumeUp[] = { "amixer", "set", "Master", "3%+", NULL };
+	static const char *volumeDown[] = { "amixer", "set", "Master", "3%-", NULL };
+#else
+	static const char *volumeToggle[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+	static const char *volumeUp[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+3%", NULL };
+	static const char *volumeDown[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-3%", NULL };
+#endif
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
