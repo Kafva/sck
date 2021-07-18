@@ -5,7 +5,7 @@ xterm*faceSize: 14
 
 # /usr/share/icons/
 Xcursor.theme: Adwaita
-Xcursor.size: 10
+Xcursor.size: 14
 
 *.foreground:   #d8dee9
 *.background:   #1d1f21

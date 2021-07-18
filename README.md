@@ -1,5 +1,5 @@
 # sck
-Fork of dwm including a polybar configuration based on [polybar-dwm-module](https://github.com/mihirlad55/polybar-dwm-module) and the following patches
+Fork of dwm including a polybar configuration based on  and the following patches
 
 * dwm-actualfullscreen-20191112-cb3f58a.diff
 * dwm-anybar-20200905-bb2e722.diff
@@ -18,10 +18,8 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 
 ### Controls
 * Quit X: <kbd>Meta</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>q</kbd> 
-* Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
 * Cycle between windows: <kbd>Meta</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
 * Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
-* Fullscreen current window: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
 * Tiled layout: <kbd>Meta</kbd> <kbd>g</kbd>
 	* Resize windows horizontally: <kbd>Meta</kbd> <kbd>h</kbd> / <kbd>Meta</kbd> <kbd>l</kbd>
 	* Move current window in the stack: <kbd>Meta</kbd> <kbd>j</kbd> / <kbd>Meta</kbd> <kbd>k</kbd>
@@ -29,8 +27,14 @@ The paths referenced in `dwm/config.h` for `launch.sh` and scripts under `~/lins
 	* Resize windows: <kbd>Meta</kbd> <kbd>Right mouse button</kbd>
 	* Move windows: <kbd>Meta</kbd> <kbd>Left mouse button</kbd>
 * Monocle layout: <kbd>Meta</kbd> <kbd>m</kbd>
+* Fullscreen current window: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
 * Screenshot (saves to `~/Pictures/Screens` by default): <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
 * Open emoji picker: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> 
+* Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
+* Open browser: <kbd>Meta</kbd> <kbd>b</kbd> 
+* Open `pulsemixer`: <kbd>Meta</kbd> <kbd>p</kbd> 
+* Save current clipboard contents to `/tmp/local-clip`: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>s</kbd> 
+* Load contents of `/tmp/rem-clip` into clipboard: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>l</kbd> 
 
 ## st
 
@@ -55,39 +59,19 @@ yay -S libxft-bgra \
 	ttf-fira-code  nerd-fonts-symbols
 ```
 
-### GTK
-KVANTUM
-Install a theme to `/usr/share/themes/`
+### GTK/Qt
+Kvantum is used to set a style for all Qt apps, it requires `QT_STYLE_OVERRIDE=kvantum` to be loaded into the environment. Both GTK and Qt will be automatically configured with a dark version of *Adapta* when running `./install.bash all|confs`. 
 ```bash
-pacman -S ttf-roboto adapta-gtk-theme
+pacman -S adapta-gtk-theme kvantum-qt5
 ```
 
-### polybar-dwm-module
-A patched version of polybar is required to display the current DWM layout, this version of polybar can be installed from the [AUR](https://aur.archlinux.org/packages/polybar-dwm-module) 
+## Polybar
+The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`.
+
+A patched version of polybar is required to display the current DWM layout, [polybar-dwm-module](https://github.com/mihirlad55/polybar-dwm-module), this version of polybar can be installed from the [AUR](https://aur.archlinux.org/packages/polybar-dwm-module) 
 
 ```bash
 yay -S polybar-dwm-module
-```
-
-or manually using the commands below (TODO test on gentoo)
-
-```bash
-# Fetch the latest version of the module
-git clone git@github.com:mihirlad55/polybar-dwm-module.git
-git -C polybar-dwm-module submodule update --init --recursive
-
-# Build it and install it to /usr/local/bin
-cd polybar-dwm-module
-./build.sh -d -a -p -n -c -i -A
-```
-
------------------
-
-## Polybar
-* The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`.
-* The `master-mixer` must be changed to the value retrieved from 
-```bash
-amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"`.
 ```
 
 ## Dmenu

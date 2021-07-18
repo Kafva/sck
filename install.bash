@@ -26,8 +26,10 @@ linkConfs(){
 	project=$(dirname $(realpath $0))
 
 	# Symlink dotfiles
+	rm -rf ~/.config/Kvantum 2> /dev/null
 	mkdir -p ~/.config/polybar
 	mkdir -p ~/.config/gtk-3.0
+	ln -sf $project/conf/Kvantum ~/.config/Kvantum
 	ln -sf $project/conf/gtk-3.0.ini ~/.config/gtk-3.0/settings.ini
 	ln -sf $project/conf/polybar.ini ~/.config/polybar/config.ini
 	ln -sf $project/conf/picom.conf ~/.config/picom.conf # Transparancy and rounded corners
