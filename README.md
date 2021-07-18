@@ -41,7 +41,7 @@ A patched version of polybar is required to display the current DWM layout, [pol
 yay -S polybar-dwm-module
 ```
 
-* The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`.
+* The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`
 * An ALSA sink listed from `pacmd list-sinks` needs to be manually set for the `sink` attribute of the pulseaudio module
 * The `./helper/bluetooth.sh` script needs to be modified with new MAC addresses to display connected devices
 
