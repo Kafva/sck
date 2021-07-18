@@ -36,16 +36,17 @@ pacman -S adapta-gtk-theme kvantum-qt5
 ```
 
 ### Polybar
-The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`.
-
 A patched version of polybar is required to display the current DWM layout, [polybar-dwm-module](https://github.com/mihirlad55/polybar-dwm-module), this version of polybar can be installed from the [AUR](https://aur.archlinux.org/packages/polybar-dwm-module) 
-
 ```bash
 yay -S polybar-dwm-module
 ```
 
+* The `monitor` option in `./confs/polybar.ini` needs to be manually modified to match one of the monitor names returned from `polybar --list-monitors`.
+* An ALSA sink listed from `pacmd list-sinks` needs to be manually set for the `sink` attribute of the pulseaudio module
+* The `./helper/bluetooth.sh` script needs to be modified with new MAC addresses to display connected devices
+
 ### Dmenu
-Note that one may need to delete the cache at `~/.cache/dmenu_run` and potentially logout before dmenu is able to find all binaries in the `$PATH`.
+Note that one may need to delete the cache at `~/.cache/dmenu_run` and potentially logout before dmenu is able to find all binaries in your `$PATH`.
 
 ### Emoji support
 A patch to `libxft` is required to prevent st and dmenu from crashing when emojis are displayed. On Arch based distributions one can install a patched version of the library, [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) from the AUR. 
@@ -87,7 +88,7 @@ If no errors occurred it should now be possible to launch the environment with `
 * Open `pulsemixer`: <kbd>Meta</kbd> <kbd>p</kbd> 
 * Save current clipboard contents to `/tmp/local-clip`: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>s</kbd> 
 * Load contents of `/tmp/rem-clip` into clipboard: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>l</kbd> 
-* The audio keys (mute/unmute etc.) interact with pulseaudio by default, if the project is compiled with `USE_ALSA` defined, commands from `alsa-utils` are used instead
+* The audio keys (mute/unmute etc.) interact with pulseaudio by default, if the project is compiled with `USE_ALSA` defined, commands from `alsa-utils` are used instead. Note that polybar is configured to only use pulseaudio.
 
 ### st
 * Scroll: <kbd>Ctrl</kbd> <kbd>j</kbd> / <kbd>Ctrl</kbd> <kbd>k</kbd>
