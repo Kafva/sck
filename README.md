@@ -30,7 +30,7 @@ pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth \
 ```
 
 ### GTK/Qt
-Kvantum is used to set a style for all Qt apps, it requires `QT_STYLE_OVERRIDE=kvantum` to be loaded into the environment. Both GTK and Qt will be automatically configured with a dark version of *Adapta* when running `./install.bash all|confs`. 
+Kvantum is used to set a style for all Qt apps, it requires `QT_STYLE_OVERRIDE=kvantum` to be configured in `/etc/enviroment` or `~/.zshrc` etc. Both GTK and Qt will be automatically configured with a dark version of *Adapta* when running `./install.bash all|confs`. 
 ```bash
 pacman -S adapta-gtk-theme kvantum-qt5
 ```
