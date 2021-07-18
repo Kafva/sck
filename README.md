@@ -104,4 +104,3 @@ If no errors occurred it should now be possible to launch the environment with `
 * Cycle through tabs: <kbd>Ctrl</kbd> <kbd>Tab</kbd> / <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Tab</kbd> 
 * Move current tab: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>h</kbd> / <kbd>l</kbd>
 * Go to tab by index: <kbd>Meta</kbd> <kbd>1</kbd> - <kbd>9</kbd> 
-

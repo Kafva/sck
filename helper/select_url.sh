@@ -13,4 +13,6 @@ setOpenTool firefox
 [ -z "$openTool" ] && setOpenTool brave
 [ -z "$openTool" ] && exit 1 
 
-$openTool $(printf "$urls" | dmenu -i -l 10)
+
+selected=$(printf "$urls" | dmenu -i -l 10)
+[ -n "$selected" ] && $openTool $selected
