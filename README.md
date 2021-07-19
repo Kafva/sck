@@ -16,7 +16,7 @@
 ## Installation
 Install the following dependencies
 ```bash
-pacman -S xorg-server xorg-xinit xorg-xset xclip \
+pacman -S xorg-server xorg-xinit xorg-xset xclip xdotool xbindkeys \
 	feh imwheel maim \
 	libxinerama yajl \
 	noto-fonts noto-fonts-emoji 
@@ -67,41 +67,45 @@ To build and install each program along with all of the configuration files run
 If no errors occurred it should now be possible to launch the environment with `startx`.
 
 ## Keybindings
+Note that `xbindkey` is used to rebind the modifier used in web browsers to manage tabs from <kbd>Ctrl</kbd> to <kbd>Super</kbd>, e.g. new tabs are opened with <kbd>Super</kbd> <kbd>t</kbd> 
 
 ### dwm
-* Quit X: <kbd>Meta</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>q</kbd> 
-* Cycle between windows: <kbd>Meta</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
-* Close current window: <kbd>Meta</kbd> <kbd>q</kbd>
-* Tiled layout: <kbd>Meta</kbd> <kbd>g</kbd>
-	* Resize windows horizontally: <kbd>Meta</kbd> <kbd>h</kbd> / <kbd>Meta</kbd> <kbd>l</kbd>
-	* Move current window in the stack: <kbd>Meta</kbd> <kbd>j</kbd> / <kbd>Meta</kbd> <kbd>k</kbd>
-* Floating layout: <kbd>Meta</kbd> <kbd>f</kbd>
-	* Resize windows: <kbd>Meta</kbd> <kbd>Right mouse button</kbd>
-	* Move windows: <kbd>Meta</kbd> <kbd>Left mouse button</kbd>
-* Monocle layout: <kbd>Meta</kbd> <kbd>m</kbd>
-* Fullscreen current window: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
-* Screenshot (saves to `~/Pictures/Screens` by default): <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
+* Cycle between windows: <kbd>Super</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
+* Move to next/previous tag: <kbd>Super</kbd> <kbd>&leftarrow</kbd> / <kbd>&rightarrow</kbd>
+* Move to tag by index (*§* is used in place of 6): <kbd>Ctrl</kbd> <kbd>1</kbd> - <kbd>5</kbd>
+* Move current window to next/previous tag: <kbd>Ctrl</kbd> <kbd>Shift</kbd>  <kbd>&leftarrow</kbd> / <kbd>&rightarrow</kbd>
+* Close current window: <kbd>Super</kbd> <kbd>q</kbd>
+* Tiled layout: <kbd>Super</kbd> <kbd>g</kbd>
+	* Resize windows horizontally: <kbd>Super</kbd> <kbd>h</kbd> / <kbd>Super</kbd> <kbd>l</kbd>
+	* Move current window in the stack: <kbd>Super</kbd> <kbd>j</kbd> / <kbd>Super</kbd> <kbd>k</kbd>
+* Floating layout: <kbd>Super</kbd> <kbd>f</kbd>
+	* Resize windows: <kbd>Super</kbd> <kbd>Right mouse button</kbd>
+	* Move windows: <kbd>Super</kbd> <kbd>Left mouse button</kbd>
+* Monocle layout: <kbd>Super</kbd> <kbd>m</kbd>
+* Fullscreen current window: <kbd>Super</kbd> <kbd>Shift</kbd> <kbd>f</kbd>
+* Screenshot (saves to `~/Pictures/Screens` by default): <kbd>Super</kbd> <kbd>Shift</kbd> <kbd>3</kbd>
 * Open emoji picker: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> 
-* Open terminal: <kbd>Meta</kbd> <kbd>Enter</kbd> 
-* Open terminal in `tabbed`: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>Enter</kbd> 
-* Open dmenu: <kbd>Meta</kbd> <kbd>Space</kbd> 
-* Open browser: <kbd>Meta</kbd> <kbd>b</kbd> 
-* Open `pulsemixer`: <kbd>Meta</kbd> <kbd>p</kbd> 
-* Save current clipboard contents to `/tmp/local-clip`: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>s</kbd> 
-* Load contents of `/tmp/rem-clip` into clipboard: <kbd>Meta</kbd> <kbd>Shift</kbd> <kbd>l</kbd> 
+* Open terminal: <kbd>Super</kbd> <kbd>Enter</kbd> 
+* Open terminal in `tabbed`: <kbd>Super</kbd> <kbd>Shift</kbd> <kbd>Enter</kbd> 
+* Open dmenu: <kbd>Super</kbd> <kbd>Space</kbd> 
+* Open browser: <kbd>Super</kbd> <kbd>b</kbd> 
+* Open `pulsemixer`: <kbd>Super</kbd> <kbd>p</kbd> 
+* Save current clipboard contents to `/tmp/local-clip`: <kbd>Super</kbd> <kbd>Shift</kbd> <kbd>s</kbd> 
+* Load contents of `/tmp/rem-clip` into clipboard: <kbd>Super</kbd> <kbd>Shift</kbd> <kbd>l</kbd> 
 * The audio keys (mute/unmute etc.) interact with pulseaudio by default, if the project is compiled with `USE_ALSA` defined, commands from `alsa-utils` are used instead. Note that polybar is configured to only use pulseaudio.
+* Quit X: <kbd>Super</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>q</kbd> 
 
 ### st
 * Scroll: <kbd>Ctrl</kbd> <kbd>j</kbd> / <kbd>Ctrl</kbd> <kbd>k</kbd>
 * Zoom: <kbd>Ctrl</kbd> <kbd>+</kbd> / <kbd>Ctrl</kbd> <kbd>-</kbd>
 * Reset zoom: <kbd>Ctrl</kbd> <kbd>0</kbd> 
-* Copy selection: <kbd>Meta</kbd> <kbd>c</kbd>
-* Paste selection: <kbd>Meta</kbd> <kbd>v</kbd>
-* Open selection for URLs in the current buffer: <kbd>Meta</kbd> <kbd>o</kbd>
+* Copy selection: <kbd>Super</kbd> <kbd>c</kbd>
+* Paste selection: <kbd>Super</kbd> <kbd>v</kbd>
+* Open selection for URLs in the current buffer: <kbd>Super</kbd> <kbd>o</kbd>
 
 ### tabbed
-* Open new tab: <kbd>Meta</kbd> <kbd>t</kbd>
-* Close tab: <kbd>Meta</kbd> <kbd>w</kbd> 
+* Open new tab: <kbd>Super</kbd> <kbd>t</kbd>
+* Close tab: <kbd>Super</kbd> <kbd>w</kbd> 
 * Cycle through tabs: <kbd>Ctrl</kbd> <kbd>Tab</kbd> / <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Tab</kbd> 
 * Move current tab: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>h</kbd> / <kbd>l</kbd>
-* Go to tab by index: <kbd>Meta</kbd> <kbd>1</kbd> - <kbd>9</kbd> 
+* Go to tab by index: <kbd>Super</kbd> <kbd>1</kbd> - <kbd>9</kbd> 

@@ -3,6 +3,6 @@ picom --config ~/.config/picom.conf &
 xrdb .Xresources &
 sh ~/.fehbg &
 setxkbmap -layout se -model macintosh -option lv3:alt_switch -option caps:escape &
-xbindkeys --poll-rc &
+xbindkeys &
 imwheel &
 exec dwm
