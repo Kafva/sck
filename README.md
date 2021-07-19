@@ -71,9 +71,9 @@ Note that `xbindkey` is used to rebind the modifier used in web browsers to mana
 
 ### dwm
 * Cycle between windows: <kbd>Super</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
-* Move to next/previous tag: <kbd>Super</kbd> <kbd>&leftarrow</kbd> / <kbd>&rightarrow</kbd>
+* Move to next/previous tag: <kbd>Super</kbd> <kbd>Left</kbd> / <kbd>Right</kbd>
 * Move to tag by index (*§* is used in place of 6): <kbd>Ctrl</kbd> <kbd>1</kbd> - <kbd>5</kbd>
-* Move current window to next/previous tag: <kbd>Ctrl</kbd> <kbd>Shift</kbd>  <kbd>&leftarrow</kbd> / <kbd>&rightarrow</kbd>
+* Move current window to next/previous tag: <kbd>Ctrl</kbd> <kbd>Shift</kbd>  <kbd>Left</kbd> / <kbd>Right</kbd>
 * Close current window: <kbd>Super</kbd> <kbd>q</kbd>
 * Tiled layout: <kbd>Super</kbd> <kbd>g</kbd>
 	* Resize windows horizontally: <kbd>Super</kbd> <kbd>h</kbd> / <kbd>Super</kbd> <kbd>l</kbd>
