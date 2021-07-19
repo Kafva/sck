@@ -67,7 +67,7 @@ To build and install each program along with all of the configuration files run
 If no errors occurred it should now be possible to launch the environment with `startx`.
 
 ## Keybindings
-Note that `xbindkey` is used to rebind the modifier used in web browsers to manage tabs from <kbd>Ctrl</kbd> to <kbd>Super</kbd>, e.g. new tabs are opened with <kbd>Super</kbd> <kbd>t</kbd> 
+Note that `xbindkey` is used to rebind the modifier used in web browsers to manage tabs from <kbd>Ctrl</kbd> to <kbd>Super</kbd>, e.g. new tabs are opened with <kbd>Super</kbd> <kbd>t</kbd>. 
 
 ### dwm
 * Cycle between windows: <kbd>Super</kbd> <kbd>Tab</kbd> or <kbd>Ctrl</kbd> <kbd>q</kbd>
