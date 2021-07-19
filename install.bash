@@ -37,6 +37,7 @@ linkConfs(){
 	ln -sf $project/conf/Xresources ~/.Xresources 	# Defaullt settings for X
 	ln -sf $project/conf/imwheelrc ~/.imwheelrc 	# Custom scroll speed for applications
 	ln -sf $project/conf/gpg-agent.conf ~/.gnupg/gpg-agent.conf # Force console prompt for GPG 
+	ln -sf $project/conf/xbindkeysrc ~/.xbindkeysrc # Enable usage of Super instead of Ctrl for tab switching etc. in browsers 
 }
 
 case $1 in
