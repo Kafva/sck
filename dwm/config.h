@@ -95,6 +95,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *tabbedTermCmd[]  = { "tabbed", "-c", "-r", "2", "st", "-w", "''", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *mixercmd[]  = { "st", "-e", "pulsemixer", NULL };
+static const char *barcmd[]  = { POLYBAR, NULL };
 
 static const char *screenShot[] = { SCREENSHOT, NULL };
 static const char *emojiMenu[] = { EMOJI_MENU, NULL };
@@ -120,6 +121,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = tabbedTermCmd } },
 	{ MODKEY,                       XK_b,      spawn,      	   {.v = browsercmd} },
 	{ MODKEY,                       XK_p,      spawn,      	   {.v = mixercmd} },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,      	   {.v = barcmd} },
 
 	/* 'Alt-tab' through windows */
 	{ ControlMask,                  XK_q,      focusstack,     {.i = +1 } },
