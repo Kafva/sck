@@ -35,6 +35,7 @@ linkConfs(){
 	ln -sf $project/conf/picom.conf ~/.config/picom.conf # Transparancy and rounded corners
 	ln -sf $project/conf/xinitrc ~/.xinitrc 	# Commands to run upon calling `startx`
 	ln -sf $project/conf/Xresources ~/.Xresources 	# Defaullt settings for X
+	ln -sf $project/conf/Xmodmap ~/.Xmodmap 	# Rebind Super_R to Ctrl_R
 	ln -sf $project/conf/imwheelrc ~/.imwheelrc 	# Custom scroll speed for applications
 	ln -sf $project/conf/gpg-agent.conf ~/.gnupg/gpg-agent.conf # Force console prompt for GPG 
 	ln -sf $project/conf/xbindkeysrc ~/.xbindkeysrc # Enable usage of Super instead of Ctrl for tab switching etc. in browsers 

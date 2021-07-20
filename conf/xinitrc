@@ -5,4 +5,5 @@ sh ~/.fehbg &
 setxkbmap -layout se -model macintosh -option lv3:alt_switch -option caps:escape &
 xbindkeys &
 imwheel &
+(sleep 5 && xmodmap ~/.Xmodmap) &
 exec dwm
